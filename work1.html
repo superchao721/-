@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="GB2312">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>输出行数</title>
+    <script>
+        document.write("<center>");
+        var row = parseInt(prompt("请输入显示的行数", ""));
+        if (row > 5) {
+            for (var i = row; i > 1; i--) {
+                for (var j = i; j >= 1; j--) {
+                    document.write(" * ");
+                }
+                document.write("<br/>");
+            }
+        } else if (row <= 5 && row > 0) {
+            for (var i = row; i >= 1; i--) {
+                for (var j = i; j >= 1; j--) {
+                    document.write(" * ");
+                }
+                document.write("<br/>");
+            }
+            for (var i = 0; i < row; i++) {
+                for (var j = 0; j <= i; j++) {
+                    document.write(" * ");
+                }
+                document.write("<br/>");
+            }
+        } else {
+            alert("只接受正整数");
+            window.location.reload(true);
+        }
+        document.write("</center>");
+    </script>
+</head>
+<body>
+</body>
+</html>

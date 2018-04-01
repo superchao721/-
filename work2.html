@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>简易计算器</title>
+    <script>
+        function compute(obj) {
+            var num1, num2, result;
+            num1 = parseFloat(document.myform.num1Text.value);
+            num2 = parseFloat(document.myform.num2Text.value);
+            switch (obj) {
+                case "+":
+                    result = num1 + num2;
+                    break;
+                case "-":
+                    result = num1 - num2;
+                    break;
+                case "*":
+                    result = num1 * num2;
+                    break;
+                case "/":
+                    if (num2 != 0)
+                        result = num1 / num2;
+                    else
+                        result = "除数不能为零，请重新输入";
+                    break;
+            }
+            document.myform.resultText.value = result;
+        }
+    </script>
+</head>
+<body>
+    <h2>简易计算器</h2>
+    <form name="myform">
+        <tr>
+            <td>第一个数</td>
+            <td colspan="3"><input name="num1Text" type="text" id="num1Text" size="25"></td>
+        </tr>
+        <br>
+        <tr>
+            <td>第二个数</td>
+            <td colspan="3"><input name="num2Text" type="text" id="num2Text" size="25"></td>
+        </tr>
+        <br>
+        <tr>
+            <td><input name="addButton" type="button" id="addBtn" value="     +     " onclick="compute('+')"></td>
+            <td><input name="subButton" type="button" id="subBtn" value="     -     " onclick="compute('-')"></td>
+            <td><input name="mulButton" type="button" id="mulBtn" value="     ×     " onclick="compute('*')"></td>
+            <td><input name="divButton" type="button" id="divBtn" value="     ÷     " onclick="compute('/')"></td>
+        </tr>
+        <br>
+        <tr>
+            <td>计算结果</td>
+            <td colspan="3"><input name="resultText" type="text" id="resultText" size="25"></td>
+        </tr>
+    </form>
+</body>
+</html>
